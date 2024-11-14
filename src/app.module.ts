@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { UsersModule } from './users/users.module';
 import typeorm from '../ormconfig';
 import * as dotenv from 'dotenv';
 
@@ -19,6 +20,7 @@ dotenv.config();
       useFactory: async (configService: ConfigService) =>
         configService.get('typeorm'),
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
