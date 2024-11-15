@@ -63,8 +63,7 @@ export interface IUser {
 }
 
 export interface UserFilter {
-  first_name?: string;
-  last_name?: string;
+  name?: string;
   city?: string;
   role?: string;
   email?: string;
