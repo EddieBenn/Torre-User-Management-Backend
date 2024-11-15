@@ -20,8 +20,8 @@ export class UsersService {
     const emailExist = await this.usersRepository.exists({ where: { email } });
     if (emailExist) {
       throw new HttpException(
-        `user with email: ${email} already exist`,
-        HttpStatus.UNPROCESSABLE_ENTITY,
+        `user with email: ${email} already exists`,
+        HttpStatus.CONFLICT,
       );
     }
     const phoneNumberExist = await this.usersRepository.exists({
@@ -29,8 +29,8 @@ export class UsersService {
     });
     if (phoneNumberExist) {
       throw new HttpException(
-        `user with phone number: ${phone} already exist`,
-        HttpStatus.UNPROCESSABLE_ENTITY,
+        `user with phone number: ${phone} already exists`,
+        HttpStatus.CONFLICT,
       );
     }
 
