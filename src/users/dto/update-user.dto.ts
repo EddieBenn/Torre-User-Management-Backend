@@ -7,49 +7,49 @@ export class UpdateUserDto extends PartialType(CreateUserDto) {}
 
 export class UpdateUserResponseDto {
   @ApiProperty({
-    required: true,
+    required: false,
     example: 'John',
     description: 'First name of the user',
   })
   first_name?: string;
 
   @ApiProperty({
-    required: true,
+    required: false,
     example: 'Doe',
     description: 'Last name of the user',
   })
   last_name?: string;
 
   @ApiProperty({
-    required: true,
+    required: false,
     example: 'user@example.com',
     description: 'Email of the user',
   })
   email?: string;
 
   @ApiProperty({
-    required: true,
+    required: false,
     example: '+2348104467932',
     description: 'Phone number of the user',
   })
   phone?: string;
 
   @ApiProperty({
-    required: true,
+    required: false,
     example: 'Lagos',
     description: 'City of the user',
   })
   city?: string;
 
   @ApiProperty({
-    required: true,
+    required: false,
     example: 'male',
     description: 'Gender of the user',
   })
   gender?: GenderEnum;
 
   @ApiProperty({
-    required: true,
+    required: false,
     example: 'admin',
     description: 'Role of the user',
   })

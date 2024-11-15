@@ -46,8 +46,7 @@ export class UsersController {
   }
 
   @ApiOperation({ summary: 'Get All Users' })
-  @ApiQuery({ name: 'first name', required: false, type: String })
-  @ApiQuery({ name: 'last name', required: false, type: String })
+  @ApiQuery({ name: 'name', required: false, type: String })
   @ApiQuery({ name: 'city', required: false, type: String })
   @ApiQuery({ name: 'email', required: false, type: String })
   @ApiQuery({ name: 'phone', required: false, type: String })

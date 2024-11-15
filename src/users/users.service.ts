@@ -6,6 +6,7 @@ import { Users } from './entities/user.entity';
 import { Repository } from 'typeorm';
 import { UtilService } from 'src/utils/utility-service';
 import { buildUserFilter } from 'src/filters/query-filter';
+import { RolesEnum } from 'src/base.entity';
 
 @Injectable()
 export class UsersService {
@@ -39,6 +40,7 @@ export class UsersService {
     const hashedPassword = await UtilService.hashPassword(newPassword);
     const newUser: IUser = {
       ...data,
+      role: RolesEnum.USER,
       password: hashedPassword,
     };
     const createdUser = await this.usersRepository.save(newUser);
