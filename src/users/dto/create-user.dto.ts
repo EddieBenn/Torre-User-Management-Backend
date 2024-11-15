@@ -7,7 +7,7 @@ import {
   IsString,
   MinLength,
 } from 'class-validator';
-import { GenderEnum, RolesEnum } from 'src/base.entity';
+import { GenderEnum } from 'src/base.entity';
 
 export class CreateUserDto {
   @ApiProperty({ example: 'John', description: 'First name of the user' })
@@ -48,11 +48,6 @@ export class CreateUserDto {
   @IsNotEmpty()
   @IsEnum(GenderEnum)
   gender: GenderEnum;
-
-  @ApiProperty({ example: 'admin', description: 'Role of the user' })
-  @IsNotEmpty()
-  @IsEnum(RolesEnum)
-  role: RolesEnum;
 }
 
 export interface IUser {
